@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/environment.rb'
+
+# url = 'https://quicktopic.com/50/H/fTA74DvqKqt'
+url = 'https://quicktopic.com/48/H/gUG7EJcWc3BWt'
+
+posts = Scraper.get_posts(url)
+
+# puts posts[-1].css('.messageauthor').text
+
+# messagecell = posts[-1].css('.messagecell')
+# messagecell.search('.div-topic-message-edited-note').remove
+# note = messagecell.css('.message-note')
+
+# puts [
+#     messagecell,
+#     '-----',
+#     # note,
+#     '-----',
+#     messagecell.text,
+# ]
+
+posts.each do |post|
+    Scraper.show_post(post)
+    puts
+end
