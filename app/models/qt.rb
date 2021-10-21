@@ -1,5 +1,7 @@
 class Qt < ActiveRecord::Base
 
+    has_many :posts
+
     @@base_url = 'https://quicktopic.com/'
 
     def to_s

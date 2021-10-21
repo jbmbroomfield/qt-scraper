@@ -5,10 +5,10 @@ require_relative '../config/environment.rb'
 # url = 'http://forum.dominionstrategy.com/index.php?topic=20798.0;all'
 # url = 'http://forum.dominionstrategy.com/index.php?topic=20473.0;all'
 # url = 'http://forum.dominionstrategy.com/index.php?topic=20473.1350'
-url = 'http://forum.dominionstrategy.com/index.php?topic=11174.4600'
+# url = 'http://forum.dominionstrategy.com/index.php?topic=11174.4600'
 
-Qt.delete_all
-Scraper.get_urls(url)
+# Qt.delete_all
+# Scraper.get_urls(url)
 
 # input_text = '<div class="post" id="preview_body"><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><div style="text-align: left;"><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"></span></span><span style="color: rgb(5, 79, 137);" class="bbc_color"><a href="https://quicktopic.com/50/H/PKZQ6YRdk2F3" class="bbc_link" target="_blank">Dice Mafia: Personal QT - Archetype</a></span></div><span style="color: rgb(64, 74, 78);" class="bbc_color"></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"><span style="font-family: Lucida Grande;" class="bbc_font"><span style="font-size: 2px;" class="bbc_size">08-18-2014 06:57 PM</span></span></span></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><div style="text-align: right;"><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"><span style="font-family: Lucida Grande;" class="bbc_font"><span style="font-size: 2px;" class="bbc_size">59&nbsp; </span></span></span></span></div><span style="color: rgb(64, 74, 78);" class="bbc_color"></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"><span style="font-family: Lucida Grande;" class="bbc_font"><span style="font-size: 2px;" class="bbc_size">Jimmmmm</span></span></span></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><div style="text-align: left;"><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"></span></span><span style="color: rgb(5, 79, 137);" class="bbc_color"><a href="https://quicktopic.com/50/H/fTA74DvqKqt" class="bbc_link" target="_blank">Dice Mafia: Mod QT</a></span></div><span style="color: rgb(64, 74, 78);" class="bbc_color"></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"><span style="font-family: Lucida Grande;" class="bbc_font"><span style="font-size: 2px;" class="bbc_size">08-18-2014 06:55 PM</span></span></span></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><div style="text-align: right;"><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"><span style="font-family: Lucida Grande;" class="bbc_font"><span style="font-size: 2px;" class="bbc_size">130&nbsp; </span></span></span></span></div><span style="color: rgb(64, 74, 78);" class="bbc_color"></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"><span style="font-family: Lucida Grande;" class="bbc_font"><span style="font-size: 2px;" class="bbc_size">Jimmmmm</span></span></span></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><table class="bbc_table"><tbody><tr><td><span style="color: rgb(64, 74, 78);" class="bbc_color"></span><div style="text-align: left;"><span style="color: rgb(64, 74, 78);" class="bbc_color"><span style="font-family: arial;" class="bbc_font"></span></span><span style="color: rgb(5, 79, 137);" class="bbc_color"><a href="https://quicktopic.com/50/H/QatgpHWUMRSA" class="bbc_link" target="_blank">Dice Mafia: Personal QT - Beyond Awesome</a></span></div><span style="color: rgb(64, 74, 78);" class="bbc_color"></span></td></tr></tbody></table><span style="color: rgb(64, 74, 78);" class="bbc_color"></span></div>'
 
@@ -18,10 +18,10 @@ Scraper.get_urls(url)
 puts Qt.all.map { |qt| qt.url }
 puts Qt.count
 
-# url = 'https://quicktopic.com/50/H/fTA74DvqKqt'
+url = 'https://quicktopic.com/50/H/fTA74DvqKqt'
 # url = 'https://quicktopic.com/48/H/gUG7EJcWc3BWt'
 
-# posts = Scraper.get_posts(url)
+posts = Scraper.get_posts(url)
 
 # puts posts[-1].css('.messageauthor').text
 
@@ -37,7 +37,7 @@ puts Qt.count
 #     messagecell.text,
 # ]
 
-# posts.each do |post|
-#     Scraper.show_post(post)
-#     puts
-# end
+posts.each do |post|
+    Scraper.show_post(post)
+    puts
+end

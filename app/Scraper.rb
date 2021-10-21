@@ -10,7 +10,9 @@ class Scraper
         number &&= number.text
         datetime = post.css('.messagedata')
         date = datetime && datetime[0] && datetime[0].text
-        time = datetime && datetime[1] && datetime[1].text        
+        time = datetime && datetime[1] && datetime[1].text    
+        note = post.css('.message-note')
+        note &&= note.text    
         text = post.css('.messagecell')
         text.search('.div-topic-message-edited-note').remove
         divs = text.css('div')
@@ -25,6 +27,7 @@ class Scraper
             "Date: #{date}",
             "Time: #{time}",
             "Text: #{text}",
+            "Note: #{note}",
             "-----",
         ]
     end
