@@ -3,7 +3,7 @@ require 'open-uri'
 
 class Scraper
 
-    def self.show_post(post)
+    def self.get_post(post)
         user = post.css('.messageauthor')
         user &&= user.text
         number = post.css('.messagenumber')
@@ -20,16 +20,7 @@ class Scraper
             text = divs[0]
         end
         text = text.inner_html
-        puts [
-            "-----",
-            "User: #{user}",
-            "Number: #{number}",
-            "Date: #{date}",
-            "Time: #{time}",
-            "Text: #{text}",
-            "Note: #{note}",
-            "-----",
-        ]
+        [user, number, date, time, text, note]
     end
 
     def self.get_posts(url)
@@ -39,7 +30,11 @@ class Scraper
             posts += self.get_page(url, page).css('.messagerow')
             posts.length == page * 1000 ? page += 1 : break
         end
-        posts
+        posts.map { |post| self.get_post(post) }
+    end
+
+    def self.get_title(url)
+        self.get_page(url).css('#p-topicname').text
     end
 
     def self.get_page(url, page=1)
