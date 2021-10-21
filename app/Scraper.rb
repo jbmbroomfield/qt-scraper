@@ -40,8 +40,15 @@ class Scraper
     end
 
     def self.get_page(url, page=1)
-        url = url + "/p#{page}000.#{page - 1}001"
+        url = url + "/p#{page}000.#{page - 1}001" if page
         Nokogiri::HTML(open(url))
+    end
+
+    def self.get_urls(url)
+        page = Scraper.get_page(url, page=nil)
+        urls = page.css('a').map { |c| c.attributes['href'] }
+        urls = urls.filter { |href| href.to_s.include?('quicktopic')  }
+        Qt.create_from_urls(urls)
     end
 
 end
