@@ -2,10 +2,7 @@
 
 require_relative '../config/environment.rb'
 
-# url = 'http://forum.dominionstrategy.com/index.php?topic=20798.0;all'
-# url = 'http://forum.dominionstrategy.com/index.php?topic=20473.0;all'
-# url = 'http://forum.dominionstrategy.com/index.php?topic=20473.1350'
-url = 'http://forum.dominionstrategy.com/index.php?topic=11174.4600'
+
 
 def delete_all
     Post.delete_all
@@ -13,6 +10,7 @@ def delete_all
 end
 
 def get_urls
+    url = 'http://forum.dominionstrategy.com/index.php?topic=20934.0'
     Scraper.get_urls(url)
 end
 
@@ -20,13 +18,39 @@ def scrape_all
     Qt.scrape_all
 end
 
-puts Qt.all
+def reset_all
+    delete_all
+    work
+end
+
+def work
+    get_urls
+    scrape_all
+end
+
+def show_counts
+    puts [
+        "#{Qt.all.count} QTs",
+        "#{Post.all.count} Posts",
+    ]
+end
+
+show_counts
+# work
+
+
+
+# Qt.first.posts.each do |post|
+#     puts post.text
+# end
+
 
 # Qt.all.each do |qt|
-#     puts [
-#         '-----',
-#         qt.posts.count,
-#         qt.posts.last.text,
-#         '-----',
-#     ]
+    # puts [
+        # '-----',
+        # qt.title,
+        # qt.posts.count,
+        # qt.posts.last.text,
+        # '-----',
+    # ]
 # end

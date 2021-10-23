@@ -19,7 +19,7 @@ class Scraper
         if divs.length > 0
             text = divs[0]
         end
-        text = text.inner_html
+        text = text.inner_html.strip
         [user, number, date, time, text, note]
     end
 
